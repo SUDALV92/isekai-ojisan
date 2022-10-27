@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oOjiBr4Bullet",
+  "name": "oOjiBr4CircleBullet",
   "spriteId": null,
   "solid": false,
   "visible": true,

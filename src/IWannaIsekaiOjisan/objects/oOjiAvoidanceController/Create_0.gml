@@ -17,3 +17,11 @@ enum Ojisan
 	Maxim = 3700,
 	BR4 = 7940
 }	
+
+avoidance_set_step(Ojisan.BR4);
+
+/*Константы*/
+X_CENTER = 625;
+Y_CENTER = 475;
+X_CAM = 0;
+Y_CAM = 0;

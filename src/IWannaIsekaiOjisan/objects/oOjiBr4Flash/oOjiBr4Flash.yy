@@ -1,16 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oOjiBr4Bullet",
-  "spriteId": null,
+  "name": "oOjiBr4Flash",
+  "spriteId": {
+    "name": "sOjiBR4Flash",
+    "path": "sprites/sOjiBR4Flash/sOjiBR4Flash.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oAvoidanceKiller",
-    "path": "objects/oAvoidanceKiller/oAvoidanceKiller.yy",
+    "name": "oAvoidanceEntity",
+    "path": "objects/oAvoidanceEntity/oAvoidanceEntity.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,7 +29,6 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],

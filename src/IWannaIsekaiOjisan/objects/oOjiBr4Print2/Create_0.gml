@@ -1,0 +1,11 @@
+image_xscale = 4;
+image_yscale = 4;
+angl = choose(-0.5,0.5);
+image_alpha = 0.4;
+color = -1;
+mode = -1;
+X_CENTER = 625;
+Y_CENTER = 475;
+speed = 3;
+t = 0;
+i0 = false;
