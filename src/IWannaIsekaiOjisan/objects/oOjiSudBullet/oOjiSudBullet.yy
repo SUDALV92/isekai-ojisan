@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "oOjiSudBullet",
-  "spriteId": null,
+  "spriteId": {
+    "name": "sFullCircle",
+    "path": "sprites/sFullCircle/sFullCircle.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -21,11 +24,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Ojisan",
-    "path": "folders/Objects/Ojisan.yy",
+    "name": "SUDALV",
+    "path": "folders/Objects/Ojisan/SUDALV.yy",
   },
 }
