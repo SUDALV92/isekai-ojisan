@@ -57,7 +57,9 @@ if( t == Ojisan.Maxim + 0 )
 #region BR4
 if(t == Ojisan.BR4){
 	scrBR4_playerTeleport(X_CENTER, 455);
-	instance_create_layer(425, Y_CENTER, "BehindPlayer", oOjiBr4Block);	
+	for(i = 0; i < 6; i++){
+		instance_create_layer(X_CENTER - 150 + 50*i, Y_CENTER, "BehindPlayer", oOjiBr4Block);	
+	}
 	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash);	
 	for(i = 0; i < 3; i++){
 		var print = instance_create_layer(X_CENTER, Y_CENTER, "BehindPlayer", oOjiBr4Print2);
@@ -99,8 +101,12 @@ if(t >= Ojisan.BR4 + 530  && t <= Ojisan.BR4 + 661){
 	Y_CAM += 950/900;
 }
 if(t == Ojisan.BR4 + 1060) {
-	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash);	
-	scrBR4_clearScreen();
+	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash);
+	if(instance_exists(oOjiBr4Print)) instance_destroy(oOjiBr4Print);
+	if(instance_exists(oOjiBr4Block)) instance_destroy(oOjiBr4Block);
+	if(instance_exists(oOjiBr4Print2)) instance_destroy(oOjiBr4Print2);
+	if(instance_exists(oOjiBr4CircleBullet)) instance_destroy(oOjiBr4CircleBullet);
+	if(instance_exists(oOjiBr4Bullet)) instance_destroy(oOjiBr4Bullet);
 }
 #endregion
 

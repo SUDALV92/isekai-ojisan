@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "oOjiBr4Block",
   "spriteId": {
-    "name": "sConveyor",
-    "path": "sprites/sConveyor/sConveyor.yy",
+    "name": "sOjiBR4Block",
+    "path": "sprites/sOjiBR4Block/sOjiBR4Block.yy",
   },
   "solid": false,
   "visible": true,
