@@ -53,6 +53,7 @@
     {"id":{"name":"sPlayerFallStart","path":"sprites/sPlayerFallStart/sPlayerFallStart.yy",},"order":9,},
     {"id":{"name":"sPlayerQuarterStep","path":"sprites/sPlayerQuarterStep/sPlayerQuarterStep.yy",},"order":10,},
     {"id":{"name":"sPlayerStart","path":"sprites/sPlayerStart/sPlayerStart.yy",},"order":11,},
+    {"id":{"name":"pOjiSudA4","path":"paths/pOjiSudA4/pOjiSudA4.yy",},"order":0,},
     {"id":{"name":"sMenuTick","path":"sprites/sMenuTick/sMenuTick.yy",},"order":0,},
     {"id":{"name":"sSmallOrb","path":"sprites/sSmallOrb/sSmallOrb.yy",},"order":35,},
     {"id":{"name":"sClockIcon","path":"sprites/sClockIcon/sClockIcon.yy",},"order":1,},
@@ -380,6 +381,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"triggers","folderPath":"folders/Objects/engine/triggers.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ojisan","folderPath":"folders/Objects/Ojisan.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BR4","folderPath":"folders/Objects/Ojisan/BR4.yy","order":7,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Max","folderPath":"folders/Objects/Ojisan/Max.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"SUDALV","folderPath":"folders/Objects/Ojisan/SUDALV.yy","order":8,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy","order":4,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy","order":11,},
@@ -417,7 +419,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tilesets","folderPath":"folders/Sprites/tilesets.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Max","folderPath":"folders/Objects/Ojisan/Max.yy","order":3,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

@@ -1,4 +1,4 @@
-if( !avoidance_is_playing() ) 
+if( !instance_exists( oPlayer ) )
 {
 	avoidance_finish();
 	return;
@@ -6,39 +6,6 @@ if( !avoidance_is_playing() )
 
 var t = avoidance_get_step();
 
-if( global.Debug = true )
-{
-	if( keyboard_check_pressed( vk_numpad4 ) )
-	{
-		var l = layer_get_id("BehindPlayer");
-		instance_activate_layer( l );
-		oAvoidance.Step = Ojisan.SUDALV;
-		if instance_exists( oOjiMaxDarkness )
-		{
-			instance_destroy(oOjiMaxDarkness);	
-		}
-	}
-	if( keyboard_check_pressed( vk_numpad5 ) )
-	{
-		var l = layer_get_id("BehindPlayer");
-		instance_activate_layer( l );
-		oAvoidance.Step = Ojisan.Maxim - 1;	
-		if instance_exists( oOjiMaxDarkness )
-		{
-			instance_destroy(oOjiMaxDarkness);	
-		}
-	}
-	if( keyboard_check_pressed( vk_numpad6 ) )
-	{
-		var l = layer_get_id("BehindPlayer");
-		instance_activate_layer( l );
-		oAvoidance.Step = Ojisan.BR4 - 1;
-		if instance_exists( oOjiMaxDarkness )
-		{
-			instance_destroy(oOjiMaxDarkness);	
-		}
-	}
-}
 #region SUDALV
 if( t == Ojisan.SUDALV + 0 )
 {
@@ -46,19 +13,35 @@ if( t == Ojisan.SUDALV + 0 )
 	repeat(N)
 	{
 		angle = random(360);
-		repeat( 30 )
+		repeat( 20 )
 		{
-			bullet = instance_create_layer( 300, 200, "Bullets", oOjiSudBullet,
+			bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
 			{
-				speed : 2 + random_range( -2, 2 ),
+				speed : random_range( 0.5, 1 ),
 				direction : angle + random_range( -5, 5 ),
 				color : red_medium,
 				mode : 0
 			});
 			instance_set_scale( bullet, 0.5 );
-			bullet2 = instance_create_layer( 950, 200, "Bullets", oOjiSudBullet,
+			bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
 			{
-				speed : 2 + random_range( -2, 2 ),
+				speed : random_range( 2, 3 ),
+				direction : angle + random_range( -5, 5 ),
+				color : red_medium,
+				mode : 0
+			});
+			instance_set_scale( bullet, 0.5 );
+			bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			{
+				speed : random_range( 0.5, 1 ),
+				direction : angle + random_range( -5, 5 ),
+				color : red_medium,
+				mode : 0
+			});
+			instance_set_scale( bullet2, 0.5 );
+			bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			{
+				speed : random_range( 2, 3 ),
 				direction : angle + random_range( -5, 5 ),
 				color : red_medium,
 				mode : 0
@@ -75,7 +58,7 @@ if( t == Ojisan.SUDALV + 60 )
 }
 if( t == Ojisan.SUDALV + 60 )
 {
-	executor = executor_create( 10, scrOjiSudA1Rain, 1000 );
+	executor = executor_create( 20, scrOjiSudA1Rain, 1000 );
 	executor.yellow = yellow;
 }
 if( t == Ojisan.SUDALV + 1145 )
@@ -89,108 +72,46 @@ if( t == Ojisan.SUDALV + 1145 )
 	executor = executor_create( 2, scrOjiSudA2Curving, 400 );
 	executor.red_dark = red_dark;
 }
+if( t == Ojisan.SUDALV + 1600 )
+{
+	executor = executor_create( 10, scrOjiSudA3Bullets, 700 );
+	executor.white = white;
+}
+if( t == Ojisan.SUDALV + 2700 )
+{
+	bullet = instance_create_layer( 1280, 256, "Bullets", oOjiSudBullet,
+	{
+		sprite_index : sFlower,
+		color : yellow,
+		mode : 4
+	});
+	with( bullet )
+	{
+		path_start( pOjiSudA4, 8, path_action_stop, true );
+		rotation = -1;
+		spawner = spawner_attach( id, 2, oOjiSudBullet, 1000 );
+		spawner.mode = 5;
+		spawner.targetColor = other.yellow;
+		spawner2 = spawner_attach( id, 90, oOjiSudBullet, 1000 );
+		spawner2.mode = 6;
+		spawner2.targetColor = other.purple;
+	}
+}
+if( t == Ojisan.SUDALV + 3670 )
+{
+	with( oOjiSudBullet )
+	{
+		killer_set_active( id, false );
+		instance_change_alpha( id, 0, 30 );
+		instance_scale( id, 3, 120 );
+	}
+}
 #endregion
 
 #region Maxim_new
 if( t == Ojisan.Maxim + 0 )
 {
-	var l = layer_get_id("BehindPlayer");
-	instance_deactivate_layer( l );
-	if instance_exists( oOjiMaxDarkness )
-	{
-		instance_destroy(oOjiMaxDarkness);	
-	}
-	room_set_infinite_jump( true );
-	scrOjiMaxKidTeleport();
-	instance_create_layer( 0, 0, "Darkness", oOjiMaxDarkness );
-	//spawner_create( 0, 0, "Bullets", 120, oOjiMaxSpawner1A, 985);
-}
-if( t >= Ojisan.Maxim && t <= Ojisan.Maxim + 865 && t mod 120 == 0 ) // Спавн колец
-{
-	instance_create_layer( 0, 0, "Bullets",oOjiMaxSpawner1A );	
-}
-if( t == Ojisan.Maxim + 985 ) // 4685 -- Смена мода. Первый шар
-{
-	with( oOjiMaxBullet1B )
-	{
-		if( Mode == 0 )
-		{
-			Mode = 2;
-			speed = 1;
-			gravity = 0.085;
-		}
-	}
-	var scale = 0.01;
-	bullet = instance_create_layer( 250, 100, "Bullets", oOjiMaxBullet2A );
-	bullet.color = #f0ff00;
-	instance_set_scale( bullet, scale );
-	instance_scale( bullet, 1.25, 20 );
-}
-if( t == Ojisan.Maxim + 1020 ) // 4720 -- Второй шар
-{
-	var scale = 0.01;
-	bullet = instance_create_layer( 250 + 250, 100, "Bullets", oOjiMaxBullet2A );
-	bullet.color = #f0ff00;
-	instance_set_scale( bullet, scale );
-	instance_scale( bullet, 1.25, 20 );
-}
-if( t == Ojisan.Maxim + 1055 ) // 4755 -- Третий шар
-{
-	var scale = 0.01;
-	bullet = instance_create_layer( 250 + 500, 100, "Bullets", oOjiMaxBullet2A );
-	bullet.color = #f0ff00;
-	instance_set_scale( bullet, scale );
-	instance_scale( bullet, 1.25, 20 );
-}
-if( t == Ojisan.Maxim + 1090 ) // 4790 -- Четвертый шар
-{
-	var scale = 0.01;
-	bullet = instance_create_layer( 250 + 750, 100, "Bullets", oOjiMaxBullet2A );
-	bullet.color = #f0ff00;
-	instance_set_scale( bullet, scale );
-	instance_scale( bullet, 1.25, 20 );
-}
-if( t == Ojisan.Maxim + 1150 ) // 4850 -- Вспышка
-{
-	instance_destroy(oOjiMaxDarkness);
-	White = instance_create_layer( 0, 0, "Darkness", oOjiMaxWhite );
-	White.image_xscale = 25;
-	White.image_yscale = 19;
-	White.image_alpha = 1;
-	instance_change_alpha( White, 0, 30 );
-}
-if( t > Ojisan.Maxim + 1150 && t < Ojisan.Maxim + 1380 && t mod 8 == 0 ) // 4850 - 5080 -- Правая сторона барраж 
-{
-	var xx = 1250 + 50;
-	var yy = irandom_range( 50, 900 );
-	var SetColor = #9e353e;
-	var scale = 0.75;
-	bullet = instance_create_layer( xx, yy, "Bullets", oOjiMaxBullet3A );
-	bullet.direction = point_direction( xx, yy, 0, yy + irandom_range( -45, 45 ) );
-	bullet.speed = random_range( 6, 8 );
-	bullet.color = SetColor;
-	instance_set_scale( bullet, scale );
-}
-if( t == Ojisan.Maxim + 1380 )
-{
-	with( oOjiMaxBullet3A )
-	{
-		//gravity_direction = 0;
-		//gravity = 0.2;
-		speed = -speed;
-	}
-}
-if( t > Ojisan.Maxim + 1380 && t < Ojisan.Maxim + 1610 && t mod 8 == 0 ) // 5080 - 5310 -- Правая сторона барраж 
-{
-	var xx = 0 - 50;
-	var yy = irandom_range( 50, 900 );
-	var SetColor = #9e353e;
-	var scale = 0.75;
-	bullet = instance_create_layer( xx, yy, "Bullets", oOjiMaxBullet3A );
-	bullet.direction = point_direction( xx, yy, 1250, yy + irandom_range( -45, 45 ) );
-	bullet.speed = random_range( 6, 8 );
-	bullet.color = SetColor;
-	instance_set_scale( bullet, scale );
+	
 }
 #endregion
 
