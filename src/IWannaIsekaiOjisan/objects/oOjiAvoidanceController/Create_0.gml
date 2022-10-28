@@ -12,7 +12,7 @@ enum Ojisan
 	SUDALV = 0,
 	Maxim = 3700,
 	BR4 = 7940
-}	
+}
 
 avoidance_set_step(Ojisan.SUDALV);
 

@@ -15,30 +15,30 @@ if( t == Ojisan.SUDALV + 0 )
 		angle = random(360);
 		repeat( 20 )
 		{
-			repeat(2) //FX
-			{
-				bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
-				{
-					speed : random_range( 0.5, 3 ),
-					direction : angle + random_range( -5, 5 ),
-					color : purple,
-					mode : 0,
-					image_alpha : 0.1
-				});
-				instance_set_scale( bullet, 3 );
-				killer_set_active( bullet, false );
+			//repeat(2) //FX
+			//{
+			//	bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			//	{
+			//		speed : random_range( 0.5, 3 ),
+			//		direction : angle + random_range( -5, 5 ),
+			//		color : purple,
+			//		mode : 0,
+			//		image_alpha : 0.1
+			//	});
+			//	instance_set_scale( bullet, 3 );
+			//	killer_set_active( bullet, false );
 				
-				bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
-				{
-					speed : random_range( 0.5, 3 ),
-					direction : angle + random_range( -5, 5 ),
-					color : purple,
-					mode : 0,
-					image_alpha : 0.1
-				});
-				instance_set_scale( bullet2, 3 );
-				killer_set_active( bullet2, false );
-			}
+			//	bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			//	{
+			//		speed : random_range( 0.5, 3 ),
+			//		direction : angle + random_range( -5, 5 ),
+			//		color : purple,
+			//		mode : 0,
+			//		image_alpha : 0.1
+			//	});
+			//	instance_set_scale( bullet2, 3 );
+			//	killer_set_active( bullet2, false );
+			//}
 			repeat(2)
 			{
 				bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
@@ -48,6 +48,10 @@ if( t == Ojisan.SUDALV + 0 )
 					color : red_medium,
 					mode : 0
 				});
+				bullet.fxSprite = sFullCircle;
+				bullet.fxColor = purple;
+				bullet.fxScale = 3;
+				bullet.fxAlpha = 0.1;
 				instance_set_scale( bullet, 0.5 );
 			}
 			bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
@@ -58,6 +62,11 @@ if( t == Ojisan.SUDALV + 0 )
 				mode : 0
 			});
 			instance_set_scale( bullet, 0.5 );
+			bullet.fxSprite = sFullCircle;
+			bullet.fxColor = purple;
+			bullet.fxScale = 3;
+			bullet.fxAlpha = 0.1;
+			
 			repeat(2)
 			{
 				bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
@@ -68,6 +77,10 @@ if( t == Ojisan.SUDALV + 0 )
 					mode : 0
 				});
 				instance_set_scale( bullet2, 0.5 );
+				bullet2.fxSprite = sFullCircle;
+				bullet2.fxColor = purple;
+				bullet2.fxScale = 3;
+				bullet2.fxAlpha = 0.1;
 			}
 			bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
 			{
@@ -77,6 +90,10 @@ if( t == Ojisan.SUDALV + 0 )
 				mode : 0
 			});
 			instance_set_scale( bullet2, 0.5 );
+			bullet2.fxSprite = sFullCircle;
+			bullet2.fxColor = purple;
+			bullet2.fxScale = 3;
+			bullet2.fxAlpha = 0.1;
 			angle += 360 / 30;
 		}
 	}
@@ -98,9 +115,18 @@ if( t == Ojisan.SUDALV + 1145 )
 		killer_set_active( id, false );
 		instance_change_alpha( id, 0, 60 );
 		instance_scale( id, 3, 120 );
+		fxSprite = -1;
 	}
 	executor = executor_create( 2, scrOjiSudA2Curving, 400 );
 	executor.red_dark = red_dark;
+}
+if( t == Ojisan.SUDALV + 1205 )
+{
+	with( oOjiSudBullet )
+	{
+		if( mode == 0 )
+			instance_destroy();
+	}
 }
 if( t == Ojisan.SUDALV + 1600 )
 {
