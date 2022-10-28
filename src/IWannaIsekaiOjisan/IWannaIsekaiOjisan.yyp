@@ -223,6 +223,7 @@
     {"id":{"name":"oGameInitializer","path":"objects/oGameInitializer/oGameInitializer.yy",},"order":0,},
     {"id":{"name":"oOjiMaxWhite","path":"objects/oOjiMaxWhite/oOjiMaxWhite.yy",},"order":5,},
     {"id":{"name":"oUiWorld","path":"objects/oUiWorld/oUiWorld.yy",},"order":1,},
+    {"id":{"name":"oOjiBr4Print3","path":"objects/oOjiBr4Print3/oOjiBr4Print3.yy",},"order":9,},
     {"id":{"name":"oWorld","path":"objects/oWorld/oWorld.yy",},"order":2,},
     {"id":{"name":"oAvoidance","path":"objects/oAvoidance/oAvoidance.yy",},"order":0,},
     {"id":{"name":"oAvoidancePersistentData","path":"objects/oAvoidancePersistentData/oAvoidancePersistentData.yy",},"order":1,},
