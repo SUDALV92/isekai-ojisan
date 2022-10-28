@@ -3,6 +3,10 @@ t = 0;
 curving = 0;
 maxSpeed = -1;
 rotation = 0;
+fxSprite = -1;
+fxColor = -1;
+fxScale = 1;
+fxAlpha = 1;
 
 if( variable_instance_exists( id, "Spawner" ) )
 {
