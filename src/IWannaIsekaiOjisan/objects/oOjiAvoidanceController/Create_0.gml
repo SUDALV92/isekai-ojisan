@@ -4,12 +4,10 @@ Avoidance = avoidance_start( musIsekaiOjisan );
 //2. 3700 - 7940
 //3. 7940
 
-/*
-Светло красный: 9E353E
-Средне красный: 8C1E24
-Тёмно красный: 530206
-Жёлтый: D4E410
-*/
+red_light = make_color_rgb( 158, 53, 62 );
+red_medium = make_color_rgb( 140, 30, 36 );
+red_dark = make_color_rgb( 83, 2, 6 );
+yellow = make_color_rgb( 212, 228, 16 );
 
 enum Ojisan
 {
@@ -17,3 +15,11 @@ enum Ojisan
 	Maxim = 3700,
 	BR4 = 7940
 }	
+
+avoidance_set_step(Ojisan.Maxim);
+
+/*Константы*/
+X_CENTER = 625;
+Y_CENTER = 475;
+X_CAM = 0;
+Y_CAM = 0;
