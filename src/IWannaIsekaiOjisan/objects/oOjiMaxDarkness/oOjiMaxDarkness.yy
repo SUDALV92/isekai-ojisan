@@ -1,8 +1,11 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oOjiMaxBullet",
-  "spriteId": null,
+  "name": "oOjiMaxDarkness",
+  "spriteId": {
+    "name": "sOjiMaxDarkness",
+    "path": "sprites/sOjiMaxDarkness/sOjiMaxDarkness.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -25,7 +28,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Ojisan",
-    "path": "folders/Objects/Ojisan.yy",
+    "name": "Max",
+    "path": "folders/Objects/Ojisan/Max.yy",
   },
 }
