@@ -388,6 +388,8 @@ if( t == Ojisan.Maxim + 3345 ) //7045
 if(t == Ojisan.BR4) {
 	var l = layer_get_id("BehindPlayer");
 	instance_activate_layer( l );
+	var tile = layer_get_id( "Tiles_1" )
+	layer_set_visible( tile, true );
 	room_set_infinite_jump( false );
 	scrBR4_playerTeleport(X_CENTER, 455);
 	for(i = 0; i < 6; i++){
