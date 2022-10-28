@@ -10,28 +10,28 @@ var t = avoidance_get_step();
 if( t == Ojisan.SUDALV + 0 )
 {
 	N = 10;
-	i = 5;
 	repeat(N)
 	{
 		angle = random(360);
 		repeat( 30 )
 		{
-			instance_create_layer( 300, 200, "Bullets", oOjiSudBullet,
+			bullet = instance_create_layer( 300, 200, "Bullets", oOjiSudBullet,
 			{
-				speed : i + random_range( -0.4, 0.4 ),
+				speed : 2 + random_range( -2, 2 ),
 				direction : angle + random_range( -5, 5 ),
 				color : red_light,
 				mode : 0
 			});
-			instance_create_layer( 950, 200, "Bullets", oOjiSudBullet,
+			instance_set_scale( bullet, 0.5 );
+			bullet2 = instance_create_layer( 950, 200, "Bullets", oOjiSudBullet,
 			{
-				speed : i + random_range( -0.4, 0.4 ),
+				speed : 2 + random_range( -2, 2 ),
 				direction : angle + random_range( -5, 5 ),
 				color : red_light,
 				mode : 0
 			});
+			instance_set_scale( bullet2, 0.5 );
 			angle += 360 / 30;
-			i -= 0.5;
 		}
 	}
 	executor_create( 1, scrOjiSudShake, 60 );
@@ -42,8 +42,18 @@ if( t == Ojisan.SUDALV + 60 )
 }
 if( t == Ojisan.SUDALV + 60 )
 {
-	executor = executor_create( 8, scrOjiSudA1Rain, 1000 );
+	executor = executor_create( 10, scrOjiSudA1Rain, 1000 );
 	executor.yellow = yellow;
+}
+if( t == Ojisan.SUDALV + 1145 )
+{
+	repeat( 60 )
+	{
+		instance_create_layer( 625, 300, "Bullets", oOjiSudBullet, 
+		{
+			
+		})	
+	}
 }
 #endregion
 

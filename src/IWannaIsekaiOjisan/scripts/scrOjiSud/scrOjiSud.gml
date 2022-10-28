@@ -1,6 +1,6 @@
 function scrOjiSudShake()
 {
-	camera_set_view_pos( view_get_camera( 0 ), irandom_range( -2, 2 ), irandom_range( -2, 2 ) );
+	camera_set_view_pos( view_get_camera( 0 ), irandom_range( -5, 5 ), irandom_range( -5, 5 ) );
 }
 
 function scrOjiSudA1Rain()
@@ -9,7 +9,8 @@ function scrOjiSudA1Rain()
 	{
 		vspeed : 4,
 		image_angle : 90,
-		image_yscale : 0.3,
+		image_xscale : 0.3,
+		image_yscale : 0.5,
 		mode : 1,
 		color : yellow
 	});
@@ -17,7 +18,8 @@ function scrOjiSudA1Rain()
 	{
 		vspeed : 4,
 		image_angle : 90,
-		image_yscale : 0.3,
+		image_xscale : 0.3,
+		image_yscale : 0.5,
 		mode : 1,
 		color : yellow
 	});
@@ -25,7 +27,8 @@ function scrOjiSudA1Rain()
 	{
 		vspeed : 4,
 		image_angle : 90,
-		image_yscale : 0.3,
+		image_xscale : 0.3,
+		image_yscale : 0.5,
 		mode : 1,
 		color : yellow
 	});

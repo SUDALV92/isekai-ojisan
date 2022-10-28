@@ -11,7 +11,10 @@
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oAvoidanceKiller",
+    "path": "objects/oAvoidanceKiller/oAvoidanceKiller.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
