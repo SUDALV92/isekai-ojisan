@@ -561,3 +561,10 @@ if(t >= Ojisan.BR4 + 2476 && t <= Ojisan.BR4 + 2590 && t % 10 == 0) {
 //+50
 #endregion
 
+//clear
+if( t == 10600 )
+{
+	avoidance_finish();
+	game_set_clear( true );
+	room_goto( rClear );
+}
