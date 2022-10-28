@@ -19,7 +19,7 @@ if( t == Ojisan.SUDALV + 0 )
 			{
 				speed : 2 + random_range( -2, 2 ),
 				direction : angle + random_range( -5, 5 ),
-				color : red_light,
+				color : red_medium,
 				mode : 0
 			});
 			instance_set_scale( bullet, 0.5 );
@@ -27,7 +27,7 @@ if( t == Ojisan.SUDALV + 0 )
 			{
 				speed : 2 + random_range( -2, 2 ),
 				direction : angle + random_range( -5, 5 ),
-				color : red_light,
+				color : red_medium,
 				mode : 0
 			});
 			instance_set_scale( bullet2, 0.5 );
@@ -47,13 +47,14 @@ if( t == Ojisan.SUDALV + 60 )
 }
 if( t == Ojisan.SUDALV + 1145 )
 {
-	repeat( 60 )
+	with( oOjiSudBullet )
 	{
-		instance_create_layer( 625, 300, "Bullets", oOjiSudBullet, 
-		{
-			
-		})	
+		killer_set_active( id, false );
+		instance_change_alpha( id, 0, 60 );
+		instance_scale( id, 3, 120 );
 	}
+	executor = executor_create( 2, scrOjiSudA2Curving, 400 );
+	executor.red_dark = red_dark;
 }
 #endregion
 

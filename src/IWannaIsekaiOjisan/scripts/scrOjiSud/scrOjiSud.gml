@@ -33,3 +33,20 @@ function scrOjiSudA1Rain()
 		color : yellow
 	});
 }
+
+function scrOjiSudA2Curving()
+{
+	repeat( 2 )
+	{
+		bullet = instance_create_layer( 625 + irandom_range( -150, 150 ), 300 + irandom_range( -150, 150 ), "Bullets", oOjiSudBullet, 
+		{
+			speed : 3,
+			direction : random( 360 ),
+			color : red_dark,
+			mode : 2
+		});
+		instance_set_scale( bullet, 0 );
+		instance_scale( bullet, 1, 30 );
+		bullet.curving = choose( -0.05, 0.05 );
+	}	
+}
