@@ -23,9 +23,31 @@ if( Mode == 0 )
 }
 if( Mode == 1 )
 {
-	var px = 50;
-	if( x > 1250 + px || x < 0 - px || y > 950 + px || y < 0 - px )
+	#region Врап
+	var px = 20;
+	if( x > 1250 + px )
 	{
-		instance_destroy();	
+		x -= 1250 + px;	
+	}
+	if( x < 0 - px )
+	{
+		x += 1250 + px;	
+	}
+	if( y > 950 + px )
+	{
+		y -= 950 + px;	
+	}
+	if( y < 0 - px )
+	{
+		y += 950 + px;	
+	}
+	#endregion	
+	if( speed > 0.1 )
+	{
+		speed -= to_speed/40;	
+	}
+	if( speed < 0.1 )
+	{
+		speed = 0.1;	
 	}
 }

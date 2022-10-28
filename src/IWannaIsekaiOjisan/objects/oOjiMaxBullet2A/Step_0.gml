@@ -9,7 +9,7 @@ if( oAvoidance.Step == Ojisan.Maxim + 1150 ) // 4850
 
 	for( var i = 0; i < spawnNum; i++ ) 
 	{
-		var scale = random_range( 0.6, 0.8 );
+		var scale = 0.5
 		var dir = irandom_range( -20, 20 );
 		var entity = instance_create_layer( spawnX, spawnY, spawnLayer, spawnObj );
 		entity.direction = spawnAngle + i * ( 360 / spawnNum ) + dir;

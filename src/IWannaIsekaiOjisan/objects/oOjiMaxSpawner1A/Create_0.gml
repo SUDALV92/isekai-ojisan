@@ -21,4 +21,5 @@ for( var i = 0; i < spawnNum; i++ )
 	entity.friction = 0.1;
 	entity.Mode = SetMode;
 	entity.color = SetColor;
+	instance_set_scale( entity, 0.9 );
 }

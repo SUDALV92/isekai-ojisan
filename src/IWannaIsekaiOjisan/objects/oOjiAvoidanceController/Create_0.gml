@@ -18,6 +18,8 @@ enum Ojisan
 
 avoidance_set_step(Ojisan.Maxim);
 
+/*Переменные*/
+Number = 0;
 /*Константы*/
 X_CENTER = 625;
 Y_CENTER = 475;

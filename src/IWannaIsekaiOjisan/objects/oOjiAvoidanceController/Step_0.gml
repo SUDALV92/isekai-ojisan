@@ -95,6 +95,8 @@ if( t == Ojisan.Maxim + 0 )
 {
 	var l = layer_get_id("BehindPlayer");
 	instance_deactivate_layer( l );
+	var tile = layer_get_id("Tiles_1");
+	instance_deactivate_layer( tile );
 	if instance_exists( oOjiMaxDarkness )
 	{
 		instance_destroy(oOjiMaxDarkness);	
@@ -158,7 +160,7 @@ if( t == Ojisan.Maxim + 1150 ) // 4850 -- Вспышка
 	White.image_alpha = 1;
 	instance_change_alpha( White, 0, 30 );
 }
-if( t > Ojisan.Maxim + 1150 && t < Ojisan.Maxim + 1380 && t mod 8 == 0 ) // 4850 - 5080 -- Правая сторона барраж 
+if( t > Ojisan.Maxim + 1150 && t < Ojisan.Maxim + 1380 && t mod 5 == 0 ) // 4850 - 5080 -- Правая сторона барраж 
 {
 	var xx = 1250 + 50;
 	var yy = irandom_range( 50, 900 );
@@ -170,7 +172,7 @@ if( t > Ojisan.Maxim + 1150 && t < Ojisan.Maxim + 1380 && t mod 8 == 0 ) // 4850
 	bullet.color = SetColor;
 	instance_set_scale( bullet, scale );
 }
-if( t == Ojisan.Maxim + 1380 )
+if( t == Ojisan.Maxim + 1380 ) // Пули назад
 {
 	with( oOjiMaxBullet3A )
 	{
@@ -179,7 +181,7 @@ if( t == Ojisan.Maxim + 1380 )
 		speed = -speed;
 	}
 }
-if( t > Ojisan.Maxim + 1380 && t < Ojisan.Maxim + 1610 && t mod 8 == 0 ) // 5080 - 5310 -- Правая сторона барраж 
+if( t > Ojisan.Maxim + 1380 && t < Ojisan.Maxim + 1610 && t mod 5 == 0 ) // 5080 - 5310 -- Леваяя сторона барраж 
 {
 	var xx = 0 - 50;
 	var yy = irandom_range( 50, 900 );
@@ -190,6 +192,114 @@ if( t > Ojisan.Maxim + 1380 && t < Ojisan.Maxim + 1610 && t mod 8 == 0 ) // 5080
 	bullet.speed = random_range( 6, 8 );
 	bullet.color = SetColor;
 	instance_set_scale( bullet, scale );
+}
+if( t == Ojisan.Maxim + 1640 ) // 5340 -- Спавн стены + жёлтые
+{
+	with( oOjiMaxBullet2B )
+	{
+		to_speed = speed - 0.01;
+		instance_change_alpha( id, 1, 120 );
+		Mode = 1;
+		alarm[0] = 120;
+	}
+	var x_player = player_get_x();
+	list_bullet = ds_list_create();
+	var px = 350;
+	if( x_player <= X_CENTER )
+	{
+		var xx = 0 - 25;
+		for( i = 0; i < 950 + 32; i += 32 + 4 )
+		{
+			bullet_wall = instance_create_layer( xx, i, "Bullets", oOjiMaxBullet4A );
+			bullet_wall.color = red_medium;
+			ds_list_add( list_bullet, bullet_wall );
+			instance_set_scale( bullet_wall, 0.5 );
+			instance_move_to_x( bullet_wall, 1250 - px, 294 ) // -> 5635
+		}
+		ds_list_shuffle( list_bullet );
+	}
+	if( x_player > X_CENTER )
+	{
+		var xx = 1250 + 25;
+		for( i = 0; i < 950 + 32; i += 32 + 4 )
+		{
+			bullet_wall = instance_create_layer( xx, i, "Bullets", oOjiMaxBullet4A );
+			bullet_wall.color = red_medium;
+			ds_list_add( list_bullet, bullet_wall );
+			instance_set_scale( bullet_wall, 0.5 );
+			instance_move_to_x( bullet_wall, 0 + px, 294 ) // -> 5635
+		}
+		ds_list_shuffle( list_bullet );
+	}
+}
+if( t >= Ojisan.Maxim + 1935 && t <= Ojisan.Maxim + 2100 && t mod 3 == 0 ) // 5635 - 5800 -- Пуля-стена улетает
+{
+	with( list_bullet[| Number] )
+	{
+		if( x < 625 )
+		{
+			instance_move_to_x( id, 1250, 30, tween_linear );
+			alarm[0] = 30;
+		}
+		if( x > 625 )
+		{
+			instance_move_to_x( id, 0, 30, tween_linear );
+			alarm[0] = 30;
+		}
+	}
+	Number++;
+}
+if( t == Ojisan.Maxim + 2100 ) // 5800 -- Спавнеры
+{
+	spawner = instance_create_layer( 625, 950, "BehindPlayer", oOjiMaxSpawner5A );
+	spawner.direction = 0;
+	spawner.color = #9600ff;
+	instance_set_scale( spawner, 0.25 );
+	
+	spawner = instance_create_layer( 625, 950, "BehindPlayer", oOjiMaxSpawner5A );
+	spawner.direction = 90;
+	spawner.color = yellow;
+	instance_set_scale( spawner, 0.25 );
+	
+	spawner = instance_create_layer( 625, 950, "BehindPlayer", oOjiMaxSpawner5A );
+	spawner.direction = 180;
+	spawner.color = #9600ff;
+	instance_set_scale( spawner, 0.25 );
+	
+	spawner = instance_create_layer( 625, 950, "BehindPlayer", oOjiMaxSpawner5A );
+	spawner.direction = 270;
+	spawner.color = yellow;
+	instance_set_scale( spawner, 0.25 );
+}
+if( t > Ojisan.Maxim + 3245 - 120 && t < Ojisan.Maxim + 3980 && t mod 60 == 0  ) // 6945 - 7680 -- Бабочки
+{
+	var xx = irandom_range( 0, 1250 );
+	var to_xx = irandom_range( 0, 1250 );
+	var yy = 950 + 25;
+	var spd = 0;
+	for( i = 0; i < 8; i++ )
+	{
+		bullet = instance_create_layer( xx, yy, "Bullets", oOjiMaxBullet6A );
+		bullet.direction = point_direction( xx, yy, to_xx, 0 );
+		bullet.speed = 1 + spd;
+		bullet.color = red_dark;
+		bullet.alarm[0] = 60;
+		instance_set_scale( bullet, 1.25 );
+		spd += 1;
+	}
+}
+if( t == Ojisan.Maxim + 3345 ) //7045
+{
+	var xx = 625 + irandom_range( -200, 200 );
+	var yy = 475;
+	Safe = instance_create_layer( xx, yy, "BehindPlayer", oOjiMaxSpawner7A );
+	Safe.image_alpha = 0.1;
+	Safe.color = #ffffff;
+	Safe.image_xscale = 0.1;
+	Safe.image_yscale = 0.1;
+	instance_change_alpha( Safe, 1, 115 );
+	instance_scale( Safe, 3, 115 );
+	Safe.alarm[0] = 120;
 }
 #endregion
 

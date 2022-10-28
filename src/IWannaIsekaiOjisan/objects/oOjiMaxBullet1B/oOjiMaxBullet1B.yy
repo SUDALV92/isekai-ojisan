@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "oOjiMaxBullet1B",
   "spriteId": {
-    "name": "sMaxDDbullet1",
-    "path": "sprites/sMaxDDbullet1/sMaxDDbullet1.yy",
+    "name": "sDDbullet",
+    "path": "sprites/sDDbullet/sDDbullet.yy",
   },
   "solid": false,
   "visible": true,

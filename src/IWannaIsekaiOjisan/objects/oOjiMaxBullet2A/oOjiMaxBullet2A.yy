@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "oOjiMaxBullet2A",
   "spriteId": {
-    "name": "sMaxBigSphere1",
-    "path": "sprites/sMaxBigSphere1/sMaxBigSphere1.yy",
+    "name": "sBigSphere",
+    "path": "sprites/sBigSphere/sBigSphere.yy",
   },
   "solid": false,
   "visible": true,
