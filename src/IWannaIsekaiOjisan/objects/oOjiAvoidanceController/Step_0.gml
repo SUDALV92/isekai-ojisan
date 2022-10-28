@@ -381,7 +381,10 @@ if( t == Ojisan.Maxim + 3345 ) //7045
 #endregion
 
 #region BR4
-if(t == Ojisan.BR4){
+if(t == Ojisan.BR4) {
+	var l = layer_get_id("BehindPlayer");
+	instance_activate_layer( l );
+	room_set_infinite_jump( false );
 	scrBR4_playerTeleport(X_CENTER, 455);
 	for(i = 0; i < 6; i++){
 		instance_create_layer(X_CENTER - 150 + 50*i, Y_CENTER, "BehindPlayer", oOjiBr4Block);	
@@ -418,21 +421,143 @@ if(t >= Ojisan.BR4 + 70  && t <= Ojisan.BR4 + 150)
 		bul.speed = random_range(5,8);
 		bul.image_xscale = 0.5;
 		bul.image_yscale = 0.5;
-	}	
+	}
 }
-if(t >= Ojisan.BR4 + 530  && t <= Ojisan.BR4 + 661){
+if(t >= Ojisan.BR4 + 530  && t <= Ojisan.BR4 + 661) {
 	camera_set_view_pos(view_get_camera(0), X_CAM, Y_CAM);
 	camera_set_view_size(view_get_camera(0), room_width - X_CAM*2, room_height - Y_CAM*2);
 	X_CAM += 1250/900;
 	Y_CAM += 950/900;
 }
 if(t == Ojisan.BR4 + 1060) {
-	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash);
+	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash2);
 	if(instance_exists(oOjiBr4Print)) instance_destroy(oOjiBr4Print);
 	if(instance_exists(oOjiBr4Block)) instance_destroy(oOjiBr4Block);
 	if(instance_exists(oOjiBr4Print2)) instance_destroy(oOjiBr4Print2);
 	if(instance_exists(oOjiBr4CircleBullet)) instance_destroy(oOjiBr4CircleBullet);
 	if(instance_exists(oOjiBr4Bullet)) instance_destroy(oOjiBr4Bullet);
+	camera_set_view_pos(view_get_camera(0), 0, 0);
+	camera_set_view_size(view_get_camera(0), 1250, 950);
 }
+if(t >= Ojisan.BR4 + 1100  && t <= Ojisan.BR4 + 1316)
+{
+	if(t % 5 == 0) {
+		var bul = instance_create_layer(1250, random_range(50, 900), "Bullets", oOjiBr4Bullet2);
+		bul.direction = random_range(135,225);
+		bul.speed = random_range(7, 10);
+		bul.color = br4p2_color1;
+	}	
+}
+if(t == Ojisan.BR4 + 1316) {
+	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash2);
+	if(instance_exists(oOjiBr4Bullet2)) instance_destroy(oOjiBr4Bullet2);
+}
+if(t >= Ojisan.BR4 + 1316 && t <= Ojisan.BR4 + 1565)
+{
+	if(t % 5 == 0) {
+		var bul = instance_create_layer(0, random_range(0, 900), "Bullets", oOjiBr4Bullet2);
+		bul.direction = random_range(135,225) - 180;
+		bul.speed = random_range(7, 10);
+		bul.color = br4p2_color2;
+	}	
+}
+if(t == Ojisan.BR4 + 1565) {
+	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash2);
+	if(instance_exists(oOjiBr4Bullet2)) instance_destroy(oOjiBr4Bullet2);
+}
+if(t >= Ojisan.BR4 + 1565 && t <= Ojisan.BR4 + 1845)
+{
+	if(t % 4 == 0) {
+		var bul = instance_create_layer(random_range(0, 950), 0, "Bullets", oOjiBr4Bullet2);
+		bul.direction = random_range(235,305);
+		bul.speed = random_range(7, 10);
+		bul.image_angle = 90;
+		bul.color = br4p2_color3;
+	}	
+}
+if(t == Ojisan.BR4 + 1845) {
+	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash2);
+	if(instance_exists(oOjiBr4Bullet2)) instance_destroy(oOjiBr4Bullet2);
+}
+if(t >= Ojisan.BR4 + 1845 && t <= Ojisan.BR4 + 2101)
+{
+	if(t % 12 == 0) {
+		var bul = instance_create_layer(1250, random_range(50, 900), "Bullets", oOjiBr4Bullet2);
+		bul.direction = random_range(135,225);
+		bul.speed = random_range(7, 10);
+		bul.color = br4p2_color1;
+	}	
+	if(t % 12 == 0) {
+		var bul = instance_create_layer(0, random_range(0, 900), "Bullets", oOjiBr4Bullet2);
+		bul.direction = random_range(135,225) - 180;
+		bul.speed = random_range(7, 10);
+		bul.color = br4p2_color2;
+	}	
+	if(t % 12 == 0) {
+		var bul = instance_create_layer(random_range(0, 950), 0, "Bullets", oOjiBr4Bullet2);
+		bul.direction = random_range(235,305);
+		bul.speed = random_range(7, 10);
+		bul.image_angle = 90;
+		bul.color = br4p2_color3;
+	}	
+}
+if(t == Ojisan.BR4 + 2101) {
+	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash2);
+	if(instance_exists(oOjiBr4Bullet2)) instance_destroy(oOjiBr4Bullet2);	
+}
+if(t >= Ojisan.BR4 + 2101 && t <= Ojisan.BR4 + 2366) {
+	if(t % 10 == 0) {		
+		var bul = instance_create_layer(0, 950, "Bullets", oOjiBr4BulletF);
+		bul.direction = random_range(45,90);
+		bul.speed = random_range(6, 8);
+		//bul.curv = (-0.1);
+		bul.gravity = 0.12;
+		bul.image_xscale = 0.5;
+		bul.image_yscale = 0.5;
+		bul.color = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+		
+		var bul = instance_create_layer(1250, 950, "Bullets", oOjiBr4BulletF);
+		bul.direction = random_range(135,180);
+		bul.speed = random_range(6, 8);
+		//bul.curv = (0.1);
+		bul.gravity = 0.12;
+		bul.image_xscale = 0.5;
+		bul.image_yscale = 0.5;
+		bul.color = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+	}
+}
+if(t == Ojisan.BR4 + 2160 || t == Ojisan.BR4 + 2230 || t == Ojisan.BR4 + 2300) {
+	repeat(3) {
+		var PP = polygon_params_create();
+		PP.sprite_index = sFlower;
+		PP.image_xscale = 0.5;
+		PP.image_yscale = 0.5;	
+		PP.color = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+		polygon_create(random_range(100,1150), random_range(100, 300),"Bullets", random(360), irandom_range(3,6), 4, random_range(4,8), oOjiBr4Bullet, PP);	
+		PP.visible = false;
+	}
+}
+if(t == Ojisan.BR4 + 2366 || t == Ojisan.BR4 + 2396 || t == Ojisan.BR4 + 2426) {
+	repeat(10) {
+		var bul = instance_create_layer(random(1250), 0, "Bullets", oOjiBr4BulletF);
+		bul.direction = random_range(255, 285);
+		bul.speed = random_range(7, 10);
+		bul.image_xscale = 0.7;
+		bul.image_yscale = 0.7;
+		bul.color = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+	}
+}
+if(t >= Ojisan.BR4 + 2476 && t <= Ojisan.BR4 + 2590 && t % 10 == 0) {
+	repeat(6) {
+		var spawn_x = choose(0, 1250);
+		var spawn_y = random(950);
+		var bul = instance_create_layer(spawn_x, spawn_y, "Bullets", oOjiBr4Bullet2);
+		bul.speed = random_range(5, 8);
+		if(spawn_x == 0) bul.direction = 0 + random_range(-20,20);
+		if(spawn_x == 1250) bul.direction = 180 + random_range(-20,20);		
+		bul.color = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+	}
+}
+//+50
 #endregion
 

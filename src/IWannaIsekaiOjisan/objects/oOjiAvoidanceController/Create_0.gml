@@ -23,3 +23,6 @@ X_CENTER = 625;
 Y_CENTER = 475;
 X_CAM = 0;
 Y_CAM = 0;
+br4p2_color1 = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+br4p2_color2 = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
+br4p2_color3 = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));

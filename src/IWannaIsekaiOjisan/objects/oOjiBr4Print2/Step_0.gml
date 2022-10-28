@@ -34,12 +34,13 @@ if(t > 530 && t % 4 == 0 && t < 661) {
 	bul.image_yscale = rng;
 	bul.color = color;
 }
-if(t == 919 || t == 978 || t == 1016){
+if(t == 919 || t == 978) {
 	var PP = polygon_params_create();
 	PP.sprite_index = sFlower;
 	PP.image_xscale = 0.5;
 	PP.image_yscale = 0.5;	
 	PP.color = color;
-	polygon_create(x,y,"Bullets", random(360), irandom_range(3,5), 3, 3, oOjiBr4Bullet, PP)
+	polygon_create(x,y,"Bullets", random(360), irandom_range(3,5), 3, 3, oOjiBr4Bullet, PP);	
+	PP.visible = false;
 }
 t++;

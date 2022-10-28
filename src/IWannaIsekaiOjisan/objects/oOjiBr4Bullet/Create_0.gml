@@ -15,7 +15,8 @@ if(variable_instance_exists(id,"Polygon"))
 	sprite_index = Polygon.sprite_index;
 	image_xscale = Polygon.image_xscale;
 	image_yscale = Polygon.image_yscale;
-	color = Polygon.color;	
+	color = Polygon.color;
+	//instance_destroy(Polygon);
 } else {
 	speed = random_range(5,7);
 	sprite_index = sSphere_custom;
