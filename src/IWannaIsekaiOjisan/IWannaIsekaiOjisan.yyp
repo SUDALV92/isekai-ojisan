@@ -339,7 +339,6 @@
     {"id":{"name":"rNeedleTest","path":"rooms/rNeedleTest/rNeedleTest.yy",},"order":2,},
     {"id":{"name":"rZ","path":"rooms/rZ/rZ.yy",},"order":3,},
     {"id":{"name":"rDemo","path":"rooms/rDemo/rDemo.yy",},"order":4,},
-    {"id":{"name":"pOjiMaxSpawner","path":"paths/pOjiMaxSpawner/pOjiMaxSpawner.yy",},"order":14,},
     {"id":{"name":"notes","path":"notes/notes/notes.yy",},"order":0,},
     {"id":{"name":"bgMain","path":"sprites/bgMain/bgMain.yy",},"order":0,},
     {"id":{"name":"sBr4Knife","path":"sprites/sBr4Knife/sBr4Knife.yy",},"order":4,},

@@ -6,10 +6,13 @@ if( Mode == 0 )
 	{
 		instance_destroy();	
 	}
-	if( oAvoidance.Step == Ojisan.Maxim + 3160 ) //6860
+	if instance_exists( oAvoidance )
 	{
-		instance_change_alpha( id, 0, 120 )
-		alarm[0] = 120;
-		killer_set_active( id, false );
+		if( oAvoidance.Step == Ojisan.Maxim + 3160 ) //6860
+		{
+			instance_change_alpha( id, 0, 120 )
+			alarm[0] = 120;
+			killer_set_active( id, false );
+		}
 	}
 }
