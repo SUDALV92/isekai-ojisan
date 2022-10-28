@@ -1,4 +1,4 @@
-if( !avoidance_is_playing() ) 
+if( !instance_exists( oPlayer ) )
 {
 	avoidance_finish();
 	return;
@@ -6,39 +6,6 @@ if( !avoidance_is_playing() )
 
 var t = avoidance_get_step();
 
-if( global.Debug = true )
-{
-	if( keyboard_check_pressed( vk_numpad4 ) )
-	{
-		var l = layer_get_id("BehindPlayer");
-		instance_activate_layer( l );
-		oAvoidance.Step = Ojisan.SUDALV;
-		if instance_exists( oOjiMaxDarkness )
-		{
-			instance_destroy(oOjiMaxDarkness);	
-		}
-	}
-	if( keyboard_check_pressed( vk_numpad5 ) )
-	{
-		var l = layer_get_id("BehindPlayer");
-		instance_activate_layer( l );
-		oAvoidance.Step = Ojisan.Maxim - 1;	
-		if instance_exists( oOjiMaxDarkness )
-		{
-			instance_destroy(oOjiMaxDarkness);	
-		}
-	}
-	if( keyboard_check_pressed( vk_numpad6 ) )
-	{
-		var l = layer_get_id("BehindPlayer");
-		instance_activate_layer( l );
-		oAvoidance.Step = Ojisan.BR4 - 1;
-		if instance_exists( oOjiMaxDarkness )
-		{
-			instance_destroy(oOjiMaxDarkness);	
-		}
-	}
-}
 #region SUDALV
 if( t == Ojisan.SUDALV + 0 )
 {
@@ -46,21 +13,67 @@ if( t == Ojisan.SUDALV + 0 )
 	repeat(N)
 	{
 		angle = random(360);
-		repeat( 30 )
+		repeat( 20 )
 		{
-			bullet = instance_create_layer( 300, 200, "Bullets", oOjiSudBullet,
+			repeat(2) //FX
 			{
-				speed : 2 + random_range( -2, 2 ),
+				bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 3 ),
+					direction : angle + random_range( -5, 5 ),
+					color : purple,
+					mode : 0,
+					image_alpha : 0.1
+				});
+				instance_set_scale( bullet, 3 );
+				killer_set_active( bullet, false );
+				
+				bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 3 ),
+					direction : angle + random_range( -5, 5 ),
+					color : purple,
+					mode : 0,
+					image_alpha : 0.1
+				});
+				instance_set_scale( bullet2, 3 );
+				killer_set_active( bullet2, false );
+			}
+			repeat(2)
+			{
+				bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 1.5 ),
+					direction : angle + random_range( -5, 5 ),
+					color : red_medium,
+					mode : 0
+				});
+				instance_set_scale( bullet, 0.5 );
+			}
+			bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			{
+				speed : random_range( 2, 3 ),
 				direction : angle + random_range( -5, 5 ),
-				color : red_light,
+				color : red_medium,
 				mode : 0
 			});
 			instance_set_scale( bullet, 0.5 );
-			bullet2 = instance_create_layer( 950, 200, "Bullets", oOjiSudBullet,
+			repeat(2)
 			{
-				speed : 2 + random_range( -2, 2 ),
+				bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 1.5 ),
+					direction : angle + random_range( -5, 5 ),
+					color : red_medium,
+					mode : 0
+				});
+				instance_set_scale( bullet2, 0.5 );
+			}
+			bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			{
+				speed : random_range( 2, 3 ),
 				direction : angle + random_range( -5, 5 ),
-				color : red_light,
+				color : red_medium,
 				mode : 0
 			});
 			instance_set_scale( bullet2, 0.5 );
@@ -75,17 +88,55 @@ if( t == Ojisan.SUDALV + 60 )
 }
 if( t == Ojisan.SUDALV + 60 )
 {
-	executor = executor_create( 10, scrOjiSudA1Rain, 1000 );
+	executor = executor_create( 20, scrOjiSudA1Rain, 1000 );
 	executor.yellow = yellow;
 }
 if( t == Ojisan.SUDALV + 1145 )
 {
-	repeat( 60 )
+	with( oOjiSudBullet )
 	{
-		instance_create_layer( 625, 300, "Bullets", oOjiSudBullet, 
-		{
-			
-		})	
+		killer_set_active( id, false );
+		instance_change_alpha( id, 0, 60 );
+		instance_scale( id, 3, 120 );
+	}
+	executor = executor_create( 2, scrOjiSudA2Curving, 400 );
+	executor.red_dark = red_dark;
+}
+if( t == Ojisan.SUDALV + 1600 )
+{
+	executor = executor_create( 10, scrOjiSudA3Bullets, 700 );
+	executor.white = white;
+	
+	executor2 = executor_create( 5, scrOjiSudA3FX, 800 );
+	executor2.purple = purple;
+}
+if( t == Ojisan.SUDALV + 2700 )
+{
+	bullet = instance_create_layer( 1280, 256, "Bullets", oOjiSudBullet,
+	{
+		sprite_index : sFlower,
+		color : yellow,
+		mode : 4
+	});
+	with( bullet )
+	{
+		path_start( pOjiSudA4, 8, path_action_stop, true );
+		rotation = -1;
+		spawner = spawner_attach( id, 2, oOjiSudBullet, 1000 );
+		spawner.mode = 5;
+		spawner.targetColor = other.yellow;
+		spawner2 = spawner_attach( id, 90, oOjiSudBullet, 1000 );
+		spawner2.mode = 6;
+		spawner2.targetColor = other.purple;
+	}
+}
+if( t == Ojisan.SUDALV + 3670 )
+{
+	with( oOjiSudBullet )
+	{
+		killer_set_active( id, false );
+		instance_change_alpha( id, 0, 30 );
+		instance_scale( id, 3, 120 );
 	}
 }
 #endregion
