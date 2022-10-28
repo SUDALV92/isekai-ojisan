@@ -414,6 +414,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"player","folderPath":"folders/Sounds/player.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"testMusic","folderPath":"folders/Sounds/testMusic.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy","order":0,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BG","folderPath":"folders/Sprites/BG.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Engine","folderPath":"folders/Sprites/Engine.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"editor","folderPath":"folders/Sprites/Engine/editor.yy","order":4,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"killers","folderPath":"folders/Sprites/Engine/killers.yy","order":1,},
@@ -426,7 +427,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tilesets","folderPath":"folders/Sprites/tilesets.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BG","folderPath":"folders/Sprites/BG.yy","order":5,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

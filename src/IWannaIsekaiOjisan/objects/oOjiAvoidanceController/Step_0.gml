@@ -146,7 +146,7 @@ if( t == Ojisan.Maxim + 0 )
 {
 	var l = layer_get_id("BehindPlayer");
 	instance_deactivate_layer( l );
-	var tile = layer_get_id("Tiles_1");
+	var tile = layer_tilemap_get_id( "Tiles_1" );
 	instance_deactivate_layer( tile );
 	if instance_exists( oOjiMaxDarkness )
 	{
