@@ -6,7 +6,7 @@ if( Mode == 0 )
 	direction++;
 	if instance_exists( oAvoidance )
 	{
-		if( oAvoidance.Step > Ojisan.Maxim + 2100 && oAvoidance.Step < Ojisan.Maxim + 3160 && oAvoidance.Step mod 6 == 0 )
+		if( oAvoidance.Step > Ojisan.Maxim + 2100 && oAvoidance.Step < Ojisan.Maxim + 3160 && oAvoidance.Step mod 5 == 0 )
 		{
 			var dir = point_direction( x, y, 625, 475 );
 			bullet = instance_create_layer( x, y, "Bullets", oOjiMaxBullet5A );

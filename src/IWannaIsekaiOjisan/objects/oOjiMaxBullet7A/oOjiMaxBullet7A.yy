@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "oOjiMaxBullet7A",
   "spriteId": {
-    "name": "sDDbullet_2",
-    "path": "sprites/sDDbullet_2/sDDbullet_2.yy",
+    "name": "sSphere_custom",
+    "path": "sprites/sSphere_custom/sSphere_custom.yy",
   },
   "solid": false,
   "visible": true,
