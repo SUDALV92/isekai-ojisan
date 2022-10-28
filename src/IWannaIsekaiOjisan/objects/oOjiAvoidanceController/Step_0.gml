@@ -505,6 +505,9 @@ if(t == Ojisan.BR4 + 2101) {
 	instance_create_layer(0, 0, "Bullets", oOjiBr4Flash2);
 	if(instance_exists(oOjiBr4Bullet2)) instance_destroy(oOjiBr4Bullet2);	
 }
+if(t >= Ojisan.BR4 + 1060 && t % 20 == 0){
+	repeat(3) instance_create_layer(random_range(50, 1200), random_range(50, 900), "BehindPlayer", oOjiBr4Print3);	 
+}
 if(t >= Ojisan.BR4 + 2101 && t <= Ojisan.BR4 + 2366) {
 	if(t % 10 == 0) {		
 		var bul = instance_create_layer(0, 950, "Bullets", oOjiBr4BulletF);
@@ -562,7 +565,7 @@ if(t >= Ojisan.BR4 + 2476 && t <= Ojisan.BR4 + 2590 && t % 10 == 0) {
 #endregion
 
 //clear
-if( t == 10600 )
+if( t == 10700 )
 {
 	avoidance_finish();
 	game_set_clear( true );
