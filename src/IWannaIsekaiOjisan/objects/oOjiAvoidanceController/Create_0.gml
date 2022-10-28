@@ -14,7 +14,7 @@ enum Ojisan
 	BR4 = 7940
 }
 
-avoidance_set_step(Ojisan.BR4 + 1060);
+avoidance_set_step(Ojisan.BR4 + 2160 );
 
 /*Переменные*/
 Number = 0;

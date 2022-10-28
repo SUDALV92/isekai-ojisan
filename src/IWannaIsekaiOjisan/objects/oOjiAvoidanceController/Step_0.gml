@@ -545,17 +545,17 @@ if(t == Ojisan.BR4 + 2160 || t == Ojisan.BR4 + 2230 || t == Ojisan.BR4 + 2300) {
 	}
 }
 if(t == Ojisan.BR4 + 2366 || t == Ojisan.BR4 + 2396 || t == Ojisan.BR4 + 2426) {
-	repeat(10) {
+	repeat(8) {
 		var bul = instance_create_layer(random(1250), 0, "Bullets", oOjiBr4BulletF);
 		bul.direction = random_range(255, 285);
-		bul.speed = random_range(7, 10);
-		bul.image_xscale = 0.7;
-		bul.image_yscale = 0.7;
+		bul.speed = random_range(6, 9);
+		bul.image_xscale = 0.65;
+		bul.image_yscale = 0.65;
 		bul.color = choose(red_light, red_medium,red_dark,yellow,purple,make_color_hsv(125, 255, 255));
 	}
 }
 if(t >= Ojisan.BR4 + 2476 && t <= Ojisan.BR4 + 2590 && t % 10 == 0) {
-	repeat(6) {
+	repeat(4) {
 		var spawn_x = choose(0, 1250);
 		var spawn_y = random(950);
 		var bul = instance_create_layer(spawn_x, spawn_y, "Bullets", oOjiBr4Bullet2);
