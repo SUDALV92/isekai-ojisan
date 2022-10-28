@@ -253,7 +253,7 @@ if( t > Ojisan.Maxim + 1150 && t < Ojisan.Maxim + 1380 && t mod 5 == 0 ) // 4850
 	bullet.color = SetColor;
 	instance_set_scale( bullet, scale );
 }
-if( t == Ojisan.Maxim + 1380 ) // Пули назад
+if( t == Ojisan.Maxim + 1345 ) // 5045 - Пули назад
 {
 	with( oOjiMaxBullet3A )
 	{
@@ -262,7 +262,7 @@ if( t == Ojisan.Maxim + 1380 ) // Пули назад
 		speed = -speed;
 	}
 }
-if( t > Ojisan.Maxim + 1380 && t < Ojisan.Maxim + 1610 && t mod 5 == 0 ) // 5080 - 5310 -- Леваяя сторона барраж 
+if( t > Ojisan.Maxim + 1345 && t < Ojisan.Maxim + 1610 && t mod 5 == 0 ) // 5045 - 5310 -- Леваяя сторона барраж 
 {
 	var xx = 0 - 50;
 	var yy = irandom_range( 50, 900 );
