@@ -201,6 +201,7 @@ if( t == Ojisan.Maxim + 985 ) // 4685 -- Смена мода. Первый ша�
 	var scale = 0.01;
 	bullet = instance_create_layer( 250, 100, "Bullets", oOjiMaxBullet2A );
 	bullet.color = #f0ff00;
+	bullet.Time = t;
 	instance_set_scale( bullet, scale );
 	instance_scale( bullet, 1.25, 20 );
 }
@@ -209,6 +210,7 @@ if( t == Ojisan.Maxim + 1020 ) // 4720 -- Второй шар
 	var scale = 0.01;
 	bullet = instance_create_layer( 250 + 250, 100, "Bullets", oOjiMaxBullet2A );
 	bullet.color = #f0ff00;
+	bullet.Time = t;
 	instance_set_scale( bullet, scale );
 	instance_scale( bullet, 1.25, 20 );
 }
@@ -217,6 +219,7 @@ if( t == Ojisan.Maxim + 1055 ) // 4755 -- Третий шар
 	var scale = 0.01;
 	bullet = instance_create_layer( 250 + 500, 100, "Bullets", oOjiMaxBullet2A );
 	bullet.color = #f0ff00;
+	bullet.Time = t;
 	instance_set_scale( bullet, scale );
 	instance_scale( bullet, 1.25, 20 );
 }
@@ -225,6 +228,7 @@ if( t == Ojisan.Maxim + 1090 ) // 4790 -- Четвертый шар
 	var scale = 0.01;
 	bullet = instance_create_layer( 250 + 750, 100, "Bullets", oOjiMaxBullet2A );
 	bullet.color = #f0ff00;
+	bullet.Time = t;
 	instance_set_scale( bullet, scale );
 	instance_scale( bullet, 1.25, 20 );
 }

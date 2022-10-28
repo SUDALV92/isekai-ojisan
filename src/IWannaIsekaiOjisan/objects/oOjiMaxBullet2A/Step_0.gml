@@ -1,4 +1,4 @@
-if( oAvoidance.Step == Ojisan.Maxim + 1150 ) // 4850
+if( Time == 4850 ) // 4850
 {
 	var spawnX = x + irandom_range( -50, 50 );
 	var spawnY = y + irandom_range( -50, 50 );;
@@ -19,3 +19,4 @@ if( oAvoidance.Step == Ojisan.Maxim + 1150 ) // 4850
 	}		
 	instance_destroy();
 }
+Time++;

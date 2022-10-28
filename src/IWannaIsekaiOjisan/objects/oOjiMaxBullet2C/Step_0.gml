@@ -7,8 +7,11 @@ if( Mode == 0 )
 		instance_destroy();	
 	}
 }
-if( oAvoidance.Step == Ojisan.Maxim + 1935 )
+if instance_exists( oAvoidance )
 {
-	instance_scale( id, 0, 60 );
-	alarm[0] = 60;
+	if( oAvoidance.Step == Ojisan.Maxim + 1935 )
+	{
+		instance_scale( id, 0, 60 );
+		alarm[0] = 60;
+	}
 }
