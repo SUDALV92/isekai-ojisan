@@ -328,6 +328,7 @@
     {"id":{"name":"rZ","path":"rooms/rZ/rZ.yy",},"order":3,},
     {"id":{"name":"rDemo","path":"rooms/rDemo/rDemo.yy",},"order":4,},
     {"id":{"name":"notes","path":"notes/notes/notes.yy",},"order":0,},
+    {"id":{"name":"bgMain","path":"sprites/bgMain/bgMain.yy",},"order":0,},
     {"id":{"name":"sBr4Knife","path":"sprites/sBr4Knife/sBr4Knife.yy",},"order":4,},
     {"id":{"name":"compatibility_report_200820_160621621","path":"notes/compatibility_report_200820_160621621/compatibility_report_200820_160621621.yy",},"order":1,},
   ],
@@ -419,6 +420,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tilesets","folderPath":"folders/Sprites/tilesets.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BG","folderPath":"folders/Sprites/BG.yy","order":5,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},

@@ -16,6 +16,16 @@ switch( mode )
 		direction = random( 360 );
 		sprite_index = sSphere_2;
 		speed = random_range( 1, 4 );
+		fx = instance_create_layer( x, y, "Bullets", oOjiSudBullet,
+		{
+			mode : 0,
+			color : make_color_rgb( 158, 53, 62 ),
+			sprite_index : sThSphere,
+			image_alpha : 0.1,
+			direction : direction,
+			speed : speed
+		});
+		killer_set_active( fx, false );
 		break;
 	case 6:
 		sprite_index = sLongBullet;

@@ -15,14 +15,41 @@ if( t == Ojisan.SUDALV + 0 )
 		angle = random(360);
 		repeat( 20 )
 		{
-			bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			repeat(2) //FX
 			{
-				speed : random_range( 0.5, 1 ),
-				direction : angle + random_range( -5, 5 ),
-				color : red_medium,
-				mode : 0
-			});
-			instance_set_scale( bullet, 0.5 );
+				bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 3 ),
+					direction : angle + random_range( -5, 5 ),
+					color : purple,
+					mode : 0,
+					image_alpha : 0.1
+				});
+				instance_set_scale( bullet, 3 );
+				killer_set_active( bullet, false );
+				
+				bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 3 ),
+					direction : angle + random_range( -5, 5 ),
+					color : purple,
+					mode : 0,
+					image_alpha : 0.1
+				});
+				instance_set_scale( bullet2, 3 );
+				killer_set_active( bullet2, false );
+			}
+			repeat(2)
+			{
+				bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 1.5 ),
+					direction : angle + random_range( -5, 5 ),
+					color : red_medium,
+					mode : 0
+				});
+				instance_set_scale( bullet, 0.5 );
+			}
 			bullet = instance_create_layer( 300 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
 			{
 				speed : random_range( 2, 3 ),
@@ -31,14 +58,17 @@ if( t == Ojisan.SUDALV + 0 )
 				mode : 0
 			});
 			instance_set_scale( bullet, 0.5 );
-			bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+			repeat(2)
 			{
-				speed : random_range( 0.5, 1 ),
-				direction : angle + random_range( -5, 5 ),
-				color : red_medium,
-				mode : 0
-			});
-			instance_set_scale( bullet2, 0.5 );
+				bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
+				{
+					speed : random_range( 0.5, 1.5 ),
+					direction : angle + random_range( -5, 5 ),
+					color : red_medium,
+					mode : 0
+				});
+				instance_set_scale( bullet2, 0.5 );
+			}
 			bullet2 = instance_create_layer( 950 + irandom_range( -100, 100 ), 100 + irandom_range( -100, 100 ), "Bullets", oOjiSudBullet,
 			{
 				speed : random_range( 2, 3 ),
@@ -76,6 +106,9 @@ if( t == Ojisan.SUDALV + 1600 )
 {
 	executor = executor_create( 10, scrOjiSudA3Bullets, 700 );
 	executor.white = white;
+	
+	executor2 = executor_create( 5, scrOjiSudA3FX, 800 );
+	executor2.purple = purple;
 }
 if( t == Ojisan.SUDALV + 2700 )
 {

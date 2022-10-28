@@ -96,3 +96,16 @@ function scrOjiSudA3Bullets()
 	instance_set_scale( bullet, 0.5 );
 	bullet.outsideDelete = 500;
 }
+
+function scrOjiSudA3FX()
+{
+	bullet = instance_create_layer( irandom_range( 50, 1200 ), 1000, "Bullets", oOjiSudBullet, 
+	{
+		vspeed : -10,
+		sprite_index : sThpechat,
+		color : purple,
+		mode : 0,
+		image_alpha : 0.1
+	});
+	killer_set_active( bullet, false );	
+}
