@@ -174,6 +174,7 @@ if( t == Ojisan.Maxim + 0 )
 	instance_deactivate_layer( l );
 	var tile = layer_get_id( "Tiles_1" )
 	layer_set_visible( tile, false );
+
 	if instance_exists( oOjiMaxDarkness )
 	{
 		instance_destroy(oOjiMaxDarkness);	
