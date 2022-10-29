@@ -1,4 +1,5 @@
-Avoidance = avoidance_start( musIsekaiOjisan );
+
+Avoidance = avoidance_start( musMain );
 
 red_light = make_color_rgb( 158, 53, 62 );
 red_medium = make_color_rgb( 140, 30, 36 );
@@ -14,7 +15,7 @@ enum Ojisan
 	BR4 = 7940
 }
 
-avoidance_set_step(Ojisan.SUDALV );
+//avoidance_set_step(Ojisan.SUDALV );
 
 /*Переменные*/
 Number = 0;
