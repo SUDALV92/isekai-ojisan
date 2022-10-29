@@ -25,7 +25,7 @@ function init() {
 	/// [Internal]
 	global.IsPaused = false; // Determines if the game is paused
 	global.TimeTicking = true; // Determines if time should be incrementing
-	global.WindowTitle = "ShiftEngine Game";
+	global.WindowTitle = "Anti Vox Diamond";
 	// Death and time information format - %T - time, %D - deaths
 	global.DeathtimeTitleFormat = " - Deaths: %D | Time: %T"; // Parsed in update_title automatically
 
@@ -34,15 +34,15 @@ function init() {
 
 	/// [World]
 	global.SSaves = false; // S key for saving instead of shooting/touchshooting
-	global.StartRoom = rOjisan; // The first room when a new game is started
+	global.StartRoom = rStage1; // The first room when a new game is started
 
 	/// [Mixer]
 	global.CurrentBGM = noone; // Current BGM (set by update_bgm)
 	global.InstanceBGM = noone; // Instance of the current BGM (set by update_bgm)
 
 	/// [Debug]
-	global.Debug = true; // Enables cheats & debug hotkeys
-	global.DebugGui = true; // Enables the drawing of the debug GUI
+	global.Debug = false; // Enables cheats & debug hotkeys
+	global.DebugGui = false; // Enables the drawing of the debug GUI
 	global.DebugShowTriggers = false; // Shows all instances of oTrigger
 	global.God = false; // Invincibility (can also be toggled via debug hotkey k_debug_god)
 	global.DebugInfiniteJump = false; // Unlimited air jumping

@@ -1,0 +1,2 @@
+RoomTo = rOjisan;
+Autosave = true;
