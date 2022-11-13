@@ -233,7 +233,7 @@ if( t == Ojisan.Maxim + 1090 ) // 4790 -- Четвертый шар
 	instance_set_scale( bullet, scale );
 	instance_scale( bullet, 1.25, 20 );
 }
-if( t == Ojisan.Maxim + 1150 ) // 4850 -- Вспышка
+if( t == Ojisan.Maxim + 1100 ) // 4850 -- Вспышка
 {
 	instance_destroy(oOjiMaxDarkness);
 	White = instance_create_layer( 0, 0, "Darkness", oOjiMaxWhite );
@@ -242,7 +242,7 @@ if( t == Ojisan.Maxim + 1150 ) // 4850 -- Вспышка
 	White.image_alpha = 1;
 	instance_change_alpha( White, 0, 30 );
 }
-if( t > Ojisan.Maxim + 1150 && t < Ojisan.Maxim + 1345 && t mod 5 == 0 ) // 4850 - 5080 -- Правая сторона барраж 
+if( t > Ojisan.Maxim + 1100 && t < Ojisan.Maxim + 1345 && t mod 5 == 0 ) // 4850 - 5080 -- Правая сторона барраж 
 {
 	var xx = 1250 + 50;
 	var yy = irandom_range( 50, 900 );
@@ -314,7 +314,7 @@ if( t == Ojisan.Maxim + 1640 ) // 5340 -- Спавн стены + жёлтые
 		ds_list_shuffle( list_bullet );
 	}
 }
-if( t >= Ojisan.Maxim + 1935 && t < Ojisan.Maxim + 2030 && t mod 3 == 0 ) // 5635 - 5800 -- Пуля-стена улетает
+if( t >= Ojisan.Maxim + 1905 && t < Ojisan.Maxim + 2000 && t mod 3 == 0 ) // 5635 - 5800 -- Пуля-стена улетает
 {
 	with( list_bullet[| Number] )
 	{
@@ -450,7 +450,7 @@ if(t >= Ojisan.BR4 + 1100  && t <= Ojisan.BR4 + 1316)
 {
 	if(t % 5 == 0) {
 		var bul = instance_create_layer(1250, random_range(50, 900), "Bullets", oOjiBr4Bullet2);
-		bul.direction = random_range(135,225);
+		bul.direction = random_range(165,205);
 		bul.speed = random_range(7, 10);
 		bul.color = br4p2_color1;
 	}	
@@ -463,7 +463,7 @@ if(t >= Ojisan.BR4 + 1316 && t <= Ojisan.BR4 + 1565)
 {
 	if(t % 5 == 0) {
 		var bul = instance_create_layer(0, random_range(0, 900), "Bullets", oOjiBr4Bullet2);
-		bul.direction = random_range(135,225) - 180;
+		bul.direction = random_range(165,205) - 180;
 		bul.speed = random_range(7, 10);
 		bul.color = br4p2_color2;
 	}	
@@ -476,7 +476,7 @@ if(t >= Ojisan.BR4 + 1565 && t <= Ojisan.BR4 + 1845)
 {
 	if(t % 4 == 0) {
 		var bul = instance_create_layer(random_range(0, 950), 0, "Bullets", oOjiBr4Bullet2);
-		bul.direction = random_range(235,305);
+		bul.direction = random_range(255,295);
 		bul.speed = random_range(7, 10);
 		bul.image_angle = 90;
 		bul.color = br4p2_color3;
@@ -490,19 +490,19 @@ if(t >= Ojisan.BR4 + 1845 && t <= Ojisan.BR4 + 2101)
 {
 	if(t % 12 == 0) {
 		var bul = instance_create_layer(1250, random_range(50, 900), "Bullets", oOjiBr4Bullet2);
-		bul.direction = random_range(135,225);
+		bul.direction = random_range(165,205);
 		bul.speed = random_range(7, 10);
 		bul.color = br4p2_color1;
 	}	
 	if(t % 12 == 0) {
 		var bul = instance_create_layer(0, random_range(0, 900), "Bullets", oOjiBr4Bullet2);
-		bul.direction = random_range(135,225) - 180;
+		bul.direction = random_range(165, 205) - 180;
 		bul.speed = random_range(7, 10);
 		bul.color = br4p2_color2;
 	}	
 	if(t % 12 == 0) {
 		var bul = instance_create_layer(random_range(0, 950), 0, "Bullets", oOjiBr4Bullet2);
-		bul.direction = random_range(235,305);
+		bul.direction = random_range(255,295);
 		bul.speed = random_range(7, 10);
 		bul.image_angle = 90;
 		bul.color = br4p2_color3;

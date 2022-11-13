@@ -15,7 +15,7 @@ enum Ojisan
 	BR4 = 7940
 }
 
-//avoidance_set_step(Ojisan.SUDALV );
+avoidance_set_step(Ojisan.Maxim );
 
 /*Переменные*/
 Number = 0;

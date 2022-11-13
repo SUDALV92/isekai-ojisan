@@ -2,7 +2,7 @@ var spawnX = player_get_x();
 var spawnY = player_get_y();
 var spawnLayer = "Bullets"
 var spawnAngle = irandom(360);
-var spawnNum = 12 * 3;
+var spawnNum = 11 * 3;
 var spawnObj = oOjiMaxBullet1A;
 
 for( var i = 0; i < spawnNum; i++ ) 
