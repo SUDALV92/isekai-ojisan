@@ -25,7 +25,7 @@ function init() {
 	/// [Internal]
 	global.IsPaused = false; // Determines if the game is paused
 	global.TimeTicking = true; // Determines if time should be incrementing
-	global.WindowTitle = "Anti Vox Diamond";
+	global.WindowTitle = "I wanna Isekai Ojisan";
 	// Death and time information format - %T - time, %D - deaths
 	global.DeathtimeTitleFormat = " - Deaths: %D | Time: %T"; // Parsed in update_title automatically
 

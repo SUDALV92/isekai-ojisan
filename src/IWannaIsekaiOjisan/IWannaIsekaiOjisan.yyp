@@ -119,6 +119,7 @@
     {"id":{"name":"game_get_flag","path":"scripts/game_get_flag/game_get_flag.yy",},"order":4,},
     {"id":{"name":"game_set_value","path":"scripts/game_set_value/game_set_value.yy",},"order":5,},
     {"id":{"name":"game_set_clear","path":"scripts/game_set_clear/game_set_clear.yy",},"order":6,},
+    {"id":{"name":"sTitle","path":"sprites/sTitle/sTitle.yy",},"order":2,},
     {"id":{"name":"TileSet2","path":"tilesets/TileSet2/TileSet2.yy",},"order":1,},
     {"id":{"name":"game_get_clear","path":"scripts/game_get_clear/game_get_clear.yy",},"order":7,},
     {"id":{"name":"sHeart","path":"sprites/sHeart/sHeart.yy",},"order":30,},
